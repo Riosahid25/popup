@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #3c5077;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.btn {
+  background: #fff;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+.pop-up {
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+
+  /* for js */
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+/* extend for the js star */
+.container#blur.active {
+  filter: blur(5px) brightness(5%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* extend for the js end */
+
+.pop-up .button {
+  width: 100%;
+  margin-top: 50px;
+  background: #023863;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-weight: 800;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+
+iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  position: absolute;
+  border-radius: 6px;
+}
+
+.icon-close {
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  right: -15px;
+  top: -20px;
+}
+
+.icon-close:hover {
+  cursor: pointer;
+}
+
+/* ================================================================================================================================================================================= */
+
+/* breakpoint mobile */
+@media (min-width: 400px) {
+  .btn {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+
+  .pop-up {
+    width: 350px;
+    height: 70%;
+  }
+
+  .pop-up .button {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+}
+
+/* breakpoint tablet */
+@media (min-width: 768px) {
+  .btn {
+    padding: 15px 60px;
+    font-size: 18px;
+  }
+
+  .pop-up {
+    width: 400px;
+  }
+
+  .pop-up .button {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+}
+
+/* breakpoint desktop */
+@media (min-width: 992px) {
+  .btn {
+    padding: 20px 100px;
+    font-size: 20px;
+  }
+
+  .pop-up {
+    width: 500px;
+    height: 80%;
+  }
+
+  .pop-up .button {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
